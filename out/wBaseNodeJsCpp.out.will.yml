@@ -1,0 +1,165 @@
+format: willfile-1.0.0
+about:
+  name: wBaseNodeJsCpp
+  version: 0.1.0
+  enabled: 1
+execution: {}
+path:
+  in:
+    path: ..
+  cpp:
+    path: ./cpp
+  out:
+    path: out
+  exportedDir.debug.raw.export:
+    path: ./cpp
+    criterion:
+      default: 1
+      debug: 1
+      raw: 1
+      export: 1
+      tar: 0
+  exportedFiles.debug.raw.export:
+    path:
+      - cpp
+      - cpp/Body.begin.cpp
+      - cpp/Body.end.cpp
+      - cpp/IncludeNode.hpp
+      - cpp/Types.hpp
+      - cpp/wTools
+      - cpp/wTools/aBase.hpp
+      - cpp/wTools/ArraySorted.hpp
+      - cpp/wTools/OptionalTuple.hpp
+      - cpp/wTools/OptionalTuple.test.hpp
+      - cpp/wTools/V8.hpp
+      - cpp/wTools/zAll.hpp
+      - cpp/wTools/abase
+      - cpp/wTools/abase/aMacro.hpp
+      - cpp/wTools/abase/aType.hpp
+      - cpp/wTools/abase/bStr.hpp
+      - cpp/wTools/abase/cErr.hpp
+      - cpp/wTools/abase/cTuple.hpp
+      - cpp/wTools/container
+      - cpp/wTools/container/TypedBuffer.body.hpp
+      - cpp/wTools/container/TypedBuffer.hpp
+      - cpp/wTools/container/TypedBuffer.std.body.hpp
+      - cpp/wTools/container/TypedBuffer.std.hpp
+      - cpp/wTools/container/TypedBuffer.test.cpp
+      - cpp/wTools/container/TypedBufferConstructor.body.hpp
+      - cpp/wTools/meta
+      - cpp/wTools/meta/Body.begin.cpp
+      - cpp/wTools/meta/Body.end.cpp
+      - cpp/wTools/v8
+      - cpp/wTools/v8/aMacro.hpp
+      - cpp/wTools/v8/aType.hpp
+      - cpp/wTools/v8/bStr.hpp
+      - cpp/wTools/v8/cErr.hpp
+      - cpp/wTools/v8/cOptional.hpp
+      - cpp/wTools/v8/fIsTypeOf.hpp
+      - cpp/wTools/v8/fToNative.hpp
+      - cpp/wTools/v8/fToV8.hpp
+      - cpp/wTools/v8/jArgumentsOf.hpp
+      - cpp/wTools/v8/jFieldsOf.hpp
+    criterion:
+      default: 1
+      debug: 1
+      raw: 1
+      export: 1
+      tar: 0
+submodule: {}
+reflector:
+  exported.debug.raw.export:
+    src:
+      filePath:
+        .: null
+      prefixPath: cpp
+    criterion:
+      default: 1
+      debug: 1
+      raw: 1
+      export: 1
+      tar: 0
+  exportedFiles.debug.raw.export:
+    recursive: 0
+    src:
+      filePath:
+        .: null
+        Body.begin.cpp: null
+        Body.end.cpp: null
+        IncludeNode.hpp: null
+        Types.hpp: null
+        wTools: null
+        wTools/aBase.hpp: null
+        wTools/ArraySorted.hpp: null
+        wTools/OptionalTuple.hpp: null
+        wTools/OptionalTuple.test.hpp: null
+        wTools/V8.hpp: null
+        wTools/zAll.hpp: null
+        wTools/abase: null
+        wTools/abase/aMacro.hpp: null
+        wTools/abase/aType.hpp: null
+        wTools/abase/bStr.hpp: null
+        wTools/abase/cErr.hpp: null
+        wTools/abase/cTuple.hpp: null
+        wTools/container: null
+        wTools/container/TypedBuffer.body.hpp: null
+        wTools/container/TypedBuffer.hpp: null
+        wTools/container/TypedBuffer.std.body.hpp: null
+        wTools/container/TypedBuffer.std.hpp: null
+        wTools/container/TypedBuffer.test.cpp: null
+        wTools/container/TypedBufferConstructor.body.hpp: null
+        wTools/meta: null
+        wTools/meta/Body.begin.cpp: null
+        wTools/meta/Body.end.cpp: null
+        wTools/v8: null
+        wTools/v8/aMacro.hpp: null
+        wTools/v8/aType.hpp: null
+        wTools/v8/bStr.hpp: null
+        wTools/v8/cErr.hpp: null
+        wTools/v8/cOptional.hpp: null
+        wTools/v8/fIsTypeOf.hpp: null
+        wTools/v8/fToNative.hpp: null
+        wTools/v8/fToV8.hpp: null
+        wTools/v8/jArgumentsOf.hpp: null
+        wTools/v8/jFieldsOf.hpp: null
+      basePath: .
+      prefixPath: cpp
+    criterion:
+      default: 1
+      debug: 1
+      raw: 1
+      export: 1
+      tar: 0
+step:
+  export.out.debug:
+    criterion:
+      debug: 1
+      proto: 1
+    opts:
+      export: 'path::cpp'
+      tar: 0
+    inherit:
+      - predefined.export
+build:
+  debug.raw.export:
+    criterion:
+      default: 1
+      debug: 1
+      raw: 1
+      export: 1
+      tar: 0
+    steps:
+      - 'step::export.out.debug'
+exported:
+  debug.raw.export:
+    version: 0.1.0
+    criterion:
+      default: 1
+      debug: 1
+      raw: 1
+      export: 1
+      tar: 0
+    exportedReflector: 'reflector::exported.debug.raw.export'
+    exportedFilesReflector: 'reflector::exportedFiles.debug.raw.export'
+    exportedDirPath: 'path::exportedDir.debug.raw.export'
+    exportedFilesPath: 'path::exportedFiles.debug.raw.export'
