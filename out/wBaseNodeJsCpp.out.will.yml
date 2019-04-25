@@ -11,14 +11,16 @@ path:
     path: ./cpp
   out:
     path: out
+  repository:
+    path: 'git+https://github.com/Wandalen/wBaseNodeJsCpp.git'
+  bugs:
+    path: 'https://github.com/Wandalen/wBaseNodeJsCpp/issues'
   exportedDir.debug.raw.export:
     path: ./cpp
     criterion:
       default: 1
       debug: 1
-      raw: 1
       export: 1
-      tar: 0
   exportedFiles.debug.raw.export:
     path:
       - cpp
@@ -63,9 +65,7 @@ path:
     criterion:
       default: 1
       debug: 1
-      raw: 1
       export: 1
-      tar: 0
 submodule: {}
 reflector:
   exported.debug.raw.export:
@@ -76,65 +76,21 @@ reflector:
     criterion:
       default: 1
       debug: 1
-      raw: 1
       export: 1
-      tar: 0
   exportedFiles.debug.raw.export:
     recursive: 0
     src:
-      filePath:
-        .: null
-        Body.begin.cpp: null
-        Body.end.cpp: null
-        IncludeNode.hpp: null
-        Types.hpp: null
-        wTools: null
-        wTools/aBase.hpp: null
-        wTools/ArraySorted.hpp: null
-        wTools/OptionalTuple.hpp: null
-        wTools/OptionalTuple.test.hpp: null
-        wTools/V8.hpp: null
-        wTools/zAll.hpp: null
-        wTools/abase: null
-        wTools/abase/aMacro.hpp: null
-        wTools/abase/aType.hpp: null
-        wTools/abase/bStr.hpp: null
-        wTools/abase/cErr.hpp: null
-        wTools/abase/cTuple.hpp: null
-        wTools/container: null
-        wTools/container/TypedBuffer.body.hpp: null
-        wTools/container/TypedBuffer.hpp: null
-        wTools/container/TypedBuffer.std.body.hpp: null
-        wTools/container/TypedBuffer.std.hpp: null
-        wTools/container/TypedBuffer.test.cpp: null
-        wTools/container/TypedBufferConstructor.body.hpp: null
-        wTools/meta: null
-        wTools/meta/Body.begin.cpp: null
-        wTools/meta/Body.end.cpp: null
-        wTools/v8: null
-        wTools/v8/aMacro.hpp: null
-        wTools/v8/aType.hpp: null
-        wTools/v8/bStr.hpp: null
-        wTools/v8/cErr.hpp: null
-        wTools/v8/cOptional.hpp: null
-        wTools/v8/fIsTypeOf.hpp: null
-        wTools/v8/fToNative.hpp: null
-        wTools/v8/fToV8.hpp: null
-        wTools/v8/jArgumentsOf.hpp: null
-        wTools/v8/jFieldsOf.hpp: null
+      filePath: 'path::exportedFiles.debug.raw.export'
       basePath: .
-      prefixPath: cpp
+      prefixPath: 'path::exportedDir.debug.raw.export'
     criterion:
       default: 1
       debug: 1
-      raw: 1
       export: 1
-      tar: 0
 step:
   export.out.debug:
     criterion:
       debug: 1
-      proto: 1
     opts:
       export: 'path::cpp'
       tar: 0
@@ -145,9 +101,7 @@ build:
     criterion:
       default: 1
       debug: 1
-      raw: 1
       export: 1
-      tar: 0
     steps:
       - 'step::export.out.debug'
 exported:
@@ -156,9 +110,7 @@ exported:
     criterion:
       default: 1
       debug: 1
-      raw: 1
       export: 1
-      tar: 0
     exportedReflector: 'reflector::exported.debug.raw.export'
     exportedFilesReflector: 'reflector::exportedFiles.debug.raw.export'
     exportedDirPath: 'path::exportedDir.debug.raw.export'
