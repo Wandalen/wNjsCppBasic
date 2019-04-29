@@ -1,8 +1,12 @@
 format: willfile-1.0.0
 about:
   name: wBaseNodeJsCpp
-  version: 0.1.0
+  description: Collection of base tools for writing native NodeJs modules.
   enabled: 1
+  version: 0.1.0
+  values:
+    enabled: 1
+    name: wBaseNodeJsCpp
 execution: {}
 path:
   in:
@@ -66,6 +70,8 @@ path:
       default: 1
       debug: 1
       export: 1
+  original.will.files:
+    path: .will.yml
 submodule: {}
 reflector:
   exported.debug.raw.export:
@@ -77,8 +83,8 @@ reflector:
       default: 1
       debug: 1
       export: 1
+    mandatory: 1
   exportedFiles.debug.raw.export:
-    recursive: 0
     src:
       filePath: 'path::exportedFiles.debug.raw.export'
       basePath: .
@@ -87,6 +93,8 @@ reflector:
       default: 1
       debug: 1
       export: 1
+    recursive: 0
+    mandatory: 1
 step:
   export.out.debug:
     criterion:
@@ -115,3 +123,4 @@ exported:
     exportedFilesReflector: 'reflector::exportedFiles.debug.raw.export'
     exportedDirPath: 'path::exportedDir.debug.raw.export'
     exportedFilesPath: 'path::exportedFiles.debug.raw.export'
+    originalWillFilesPath: 'path::original.will.files'
