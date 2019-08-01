@@ -6,19 +6,19 @@ about:
   version: 0.1.0
 path:
   module.willfiles:
+    criterion:
+      predefined: 1
     path: wBaseNodeJsCpp.out.will.yml
-    criterion:
-      predefined: 1
   module.common:
-    path: wBaseNodeJsCpp.out
     criterion:
       predefined: 1
+    path: wBaseNodeJsCpp.out
   module.original.willfiles:
+    criterion:
+      predefined: 1
     path:
       - ../.im.will.yml
       - ../.ex.will.yml
-    criterion:
-      predefined: 1
   local:
     criterion:
       predefined: 1
@@ -26,26 +26,30 @@ path:
     criterion:
       predefined: 1
   in:
-    path: .
     criterion:
       predefined: 0
+    path: .
   cpp:
     path: ../cpp
   out:
-    path: .
     criterion:
       predefined: 0
+    path: .
   repository:
     path: 'git+https:///github.com/Wandalen/wBaseNodeJsCpp.git'
   bugs:
     path: 'https:///github.com/Wandalen/wBaseNodeJsCpp/issues'
   exported.dir.debug.raw.export:
-    path: ../cpp
     criterion:
       default: 1
       debug: 1
       export: 1
+    path: ../cpp
   exported.files.debug.raw.export:
+    criterion:
+      default: 1
+      debug: 1
+      export: 1
     path:
       - ../cpp
       - ../cpp/Body.begin.cpp
@@ -86,62 +90,58 @@ path:
       - ../cpp/wTools/v8/fToV8.hpp
       - ../cpp/wTools/v8/jArgumentsOf.hpp
       - ../cpp/wTools/v8/jFieldsOf.hpp
-    criterion:
-      default: 1
-      debug: 1
-      export: 1
 submodule: {}
 reflector:
   exported.debug.raw.export:
     src:
       filePath:
-        .: null
+        .: ''
       prefixPath: ../cpp
+    mandatory: 1
     criterion:
       default: 1
       debug: 1
       export: 1
-    mandatory: 1
   exported.files.debug.raw.export:
     src:
       filePath:
-        'path::exported.files.debug.raw.export': null
+        'path::exported.files.debug.raw.export': ''
       basePath: .
       prefixPath: 'path::exported.dir.debug.raw.export'
+    recursive: 0
+    mandatory: 1
     criterion:
       default: 1
       debug: 1
       export: 1
-    recursive: 0
-    mandatory: 1
 step:
   export.out.debug:
-    criterion:
-      debug: 1
     opts:
       export: 'path::cpp'
       tar: 0
+    criterion:
+      debug: 1
     inherit:
       - module.export
 build:
   debug.raw.export:
+    steps:
+      - 'step::export.out.debug'
     criterion:
       default: 1
       debug: 1
       export: 1
-    steps:
-      - 'step::export.out.debug'
 exported:
   debug.raw.export:
     version: 0.1.0
-    criterion:
-      default: 1
-      debug: 1
-      export: 1
     exportedReflector: 'reflector::exported.debug.raw.export'
     exportedFilesReflector: 'reflector::exported.files.debug.raw.export'
     exportedDirPath: 'path::exported.dir.debug.raw.export'
     exportedFilesPath: 'path::exported.files.debug.raw.export'
+    criterion:
+      default: 1
+      debug: 1
+      export: 1
 module:
   ../:
     about:
@@ -151,21 +151,21 @@ module:
       version: 0.1.0
     path:
       module.willfiles:
+        criterion:
+          predefined: 1
         path:
           - .im.will.yml
           - .ex.will.yml
-        criterion:
-          predefined: 1
       module.original.willfiles:
+        criterion:
+          predefined: 1
         path:
           - .im.will.yml
           - .ex.will.yml
-        criterion:
-          predefined: 1
       module.common:
-        path: ./
         criterion:
           predefined: 1
+        path: ./
       local:
         criterion:
           predefined: 1
@@ -173,26 +173,30 @@ module:
         criterion:
           predefined: 1
       in:
-        path: .
         criterion:
           predefined: 0
+        path: .
       cpp:
         path: ./cpp
       out:
-        path: out
         criterion:
           predefined: 0
+        path: out
       repository:
         path: 'git+https:///github.com/Wandalen/wBaseNodeJsCpp.git'
       bugs:
         path: 'https:///github.com/Wandalen/wBaseNodeJsCpp/issues'
       exported.dir.debug.raw.export:
-        path: ./cpp
         criterion:
           default: 1
           debug: 1
           export: 1
+        path: ./cpp
       exported.files.debug.raw.export:
+        criterion:
+          default: 1
+          debug: 1
+          export: 1
         path:
           - cpp
           - cpp/Body.begin.cpp
@@ -233,60 +237,56 @@ module:
           - cpp/wTools/v8/fToV8.hpp
           - cpp/wTools/v8/jArgumentsOf.hpp
           - cpp/wTools/v8/jFieldsOf.hpp
-        criterion:
-          default: 1
-          debug: 1
-          export: 1
     submodule: {}
     reflector:
       exported.debug.raw.export:
         src:
           filePath:
-            .: null
+            .: ''
           prefixPath: cpp
+        mandatory: 1
         criterion:
           default: 1
           debug: 1
           export: 1
-        mandatory: 1
       exported.files.debug.raw.export:
         src:
           filePath:
-            'path::exported.files.debug.raw.export': null
+            'path::exported.files.debug.raw.export': ''
           basePath: .
           prefixPath: 'path::exported.dir.debug.raw.export'
+        recursive: 0
+        mandatory: 1
         criterion:
           default: 1
           debug: 1
           export: 1
-        recursive: 0
-        mandatory: 1
     step:
       export.out.debug:
-        criterion:
-          debug: 1
         opts:
           export: 'path::cpp'
           tar: 0
+        criterion:
+          debug: 1
         inherit:
           - module.export
     build:
       debug.raw.export:
+        steps:
+          - 'step::export.out.debug'
         criterion:
           default: 1
           debug: 1
           export: 1
-        steps:
-          - 'step::export.out.debug'
     exported:
       debug.raw.export:
         version: 0.1.0
-        criterion:
-          default: 1
-          debug: 1
-          export: 1
         exportedReflector: 'reflector::exported.debug.raw.export'
         exportedFilesReflector: 'reflector::exported.files.debug.raw.export'
         exportedDirPath: 'path::exported.dir.debug.raw.export'
         exportedFilesPath: 'path::exported.files.debug.raw.export'
+        criterion:
+          default: 1
+          debug: 1
+          export: 1
   wBaseNodeJsCpp.out: root
