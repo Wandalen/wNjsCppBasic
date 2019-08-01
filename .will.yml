@@ -10,13 +10,13 @@ path :
   in : '.'
   cpp : './cpp'
   out : 'out'
-  repository : git+https://github.com/Wandalen/wBaseNodeJsCpp.git
-  bugs : https://github.com/Wandalen/wBaseNodeJsCpp/issues
+  repository : git+https:///github.com/Wandalen/wBaseNodeJsCpp.git
+  bugs : https:///github.com/Wandalen/wBaseNodeJsCpp/issues
 
 step  :
 
   export.out.debug :
-    inherit : predefined.export
+    inherit : module.export
     export : path::cpp
     tar : 0
     criterion :
