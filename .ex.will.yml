@@ -1,10 +1,10 @@
 
 about :
 
-  name : 'wBaseNodejsCpp'
+  name : 'wNjsCppBasic'
   description : '___'
   version : '0.4.0'
-  enabled : 1
+  enabled : 0
   interpreters :
   - njs >= 8.0.0
   - chrome >= 60.0.0
@@ -22,8 +22,8 @@ about :
 
 path :
 
-  repository : git+https:///github.com/Wandalen/wBaseNodejsCpp.git
-  bugtracker : https:///github.com/Wandalen/wBaseNodejsCpp/issues
+  repository : git+https:///github.com/Wandalen/wNjsCppBasic.git
+  bugtracker : https:///github.com/Wandalen/wNjsCppBasic/issues
 
 step :
 

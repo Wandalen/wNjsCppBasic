@@ -16,10 +16,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Wandalen/wBaseNodejsCpp.git"
+    "url": "https://github.com/Wandalen/wNjsCppBasic.git"
   },
   "bugs": {
-    "url": "https://github.com/Wandalen/wBaseNodejsCpp/issues"
+    "url": "https://github.com/Wandalen/wNjsCppBasic/issues"
   },
   "dependencies": {
     "wTools": ""

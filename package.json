@@ -4,6 +4,7 @@
   "description": "___",
   "author": "Kostiantyn Wandalen <wanalen@willbe.so>",
   "license": "MIT",
+  "enabled": 0,
   "main": "proto/dwtools/amid/___",
   "files": [
     "proto/dwtools/amid",
@@ -16,10 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Wandalen/wBaseNodejsCpp.git"
+    "url": "https://github.com/Wandalen/wNjsCppBasic.git"
   },
   "bugs": {
-    "url": "https://github.com/Wandalen/wBaseNodejsCpp/issues"
+    "url": "https://github.com/Wandalen/wNjsCppBasic/issues"
   },
   "dependencies": {
     "wTools": ""
