@@ -9,7 +9,7 @@
   "files": [
     "proto/dwtools/amid",
     "proto/dwtools/Tools.s",
-    "production"
+    "out"
   ],
   "scripts": {
     "test": "wtest .run proto/**",
