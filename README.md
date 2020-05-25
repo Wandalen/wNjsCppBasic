@@ -1,7 +1,7 @@
 
 # wNjsCppBasic
 
-Collection of base tools for writing native NodeJs modules.
+Collection of tools for writing native NodeJs modules.
 
 
 
