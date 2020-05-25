@@ -6,10 +6,6 @@ Body.end.cpp without Body.begin.cpp!
 #undef self
 #endif
 
-#ifdef SelfConstructor
-#undef SelfConstructor
-#endif
-
 #ifdef Self
 #undef Self
 #endif

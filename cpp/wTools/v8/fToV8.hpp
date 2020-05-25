@@ -26,7 +26,7 @@ inline toV8( v8::FunctionCallback src )
   // v8::Local< v8::FunctionTemplate > t = v8::FunctionTemplate::New( v8::Isolate::GetCurrent(),src );
   // v8::Local< v8::Function > f = t->GetFunction();
   // v8::FunctionTemplate result( src );
-  v8::Local< v8::Function > result = v8::Function::New( v8::Isolate::GetCurrent(),src );
+  v8::Local< v8::Function > result = v8::Function::New( v8::Isolate::GetCurrent()->GetCurrentContext(),src ).ToLocalChecked();
   return result;
 };
 
@@ -119,17 +119,17 @@ inline toV8( Int8Maybe4 src )
 
 #endif // Wrd8Maybe4Size == 8
 
-v8::Local< v8::Number >
+v8::Local< v8::BigInt >
 inline toV8( Wrd8 src )
 {
-  v8::Local< v8::Number > result = v8::Number::New( v8::Isolate::GetCurrent(),src );
+  v8::Local< v8::BigInt > result = v8::BigInt::New( v8::Isolate::GetCurrent(),src );
   return result;
 };
 
-v8::Local< v8::Number >
+v8::Local< v8::BigInt >
 inline toV8( Int8 src )
 {
-  v8::Local< v8::Number > result = v8::Number::New( v8::Isolate::GetCurrent(),src );
+  v8::Local< v8::BigInt > result = v8::BigInt::New( v8::Isolate::GetCurrent(),src );
   return result;
 };
 

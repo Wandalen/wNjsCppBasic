@@ -23,6 +23,7 @@ path :
   proto : './proto'
   export : '{path::proto}/**'
   doc : './doc'
+  cpp : cpp/**
 
   out.raw.debug :
     path : '{path::out}/debug'
