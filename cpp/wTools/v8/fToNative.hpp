@@ -63,8 +63,14 @@ bool inline toNative( const Local< ArrayBuffer > src, wTypedBuffer< Element_A >&
   if( !result )
   return result;
 
-  Element_A* data = src->GetContents().Data();
-  size_t length = src->GetContents().ByteLength();
+  #if NODE_VERSION_AT_LEAST( 14, 0, 0 )
+    Element_A* data = src->GetBackingStore()->Data();
+    size_t length = src->GetBackingStore()->ByteLength();
+  #else
+    Element_A* data = src->GetContents().Data();
+    size_t length = src->GetContents().ByteLength();
+  #endif
+
   dst.use( data,length );
 
   return result;
