@@ -36,6 +36,13 @@ step :
     tar : 0
     criterion :
       content : 'proto'
+      
+  cpp.export :
+    inherit : module.export
+    export : path::cpp
+    tar : 0
+    criterion :
+      content : 'cpp'
 
   doc.export :
     inherit : module.export
@@ -63,6 +70,14 @@ build :
     steps :
       # - build::debug.raw
       - step::proto.export
+      
+  cpp.export :
+    criterion :
+      content : 'proto'
+      export : 1
+    steps :
+      # - build::debug.raw
+      - step::cpp.export
 
   doc.export :
     criterion :
@@ -89,4 +104,5 @@ build :
     steps :
       # - build::npm
       - build::proto.export
+      - build::cpp.export
       # - build::doc.export
