@@ -1,6 +1,6 @@
 {
   "name" : "wbasenodejscpp",
-  "version" : "0.3.6",
+  "version" : "0.3.7",
   "description" : "___",
   "author" : "Kostiantyn Wandalen <wanalen@01.school>",
   "license" : "MIT",
@@ -17,7 +17,7 @@
   {
     "url" : "https://github.com/Wandalen/wNjsCppBasic/issues"
   },
-  "dependencies" : { "wTools" : "latest" },
-  "devDependencies" : { "wTesting" : "latest" },
+  "dependencies" : { "wTools" : "alpha" },
+  "devDependencies" : { "wTesting" : "alpha" },
   "keywords" : [ "wTools" ]
 }
