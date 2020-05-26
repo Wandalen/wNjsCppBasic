@@ -17,7 +17,7 @@
   {
     "url" : "https://github.com/Wandalen/wNjsCppBasic/issues"
   },
-  "dependencies" : { "wTools" : "" },
-  "devDependencies" : { "wTesting" : "" },
+  "dependencies" : { "wTools" : "latest" },
+  "devDependencies" : { "wTesting" : "latest" },
   "keywords" : [ "wTools" ]
 }

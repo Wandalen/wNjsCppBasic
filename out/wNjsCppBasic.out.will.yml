@@ -3,10 +3,10 @@ root:
   - wNjsCppBasic.out
 consistency:
   wNjsCppBasic.out.will.yml: &ref_0
-    hash: 19a5349fdc64d4240cd5fbabae671719
+    hash: 969a884cd469e7633c4fe0ff5c2370e1
     size: 38783
   ../.ex.will.yml: &ref_1
-    hash: f7faa8821a4a03db565b6492c16a8744
+    hash: 47495d4485cc6feef19f4851f5b3a3a3
     size: 1968
   ../.im.will.yml: &ref_2
     hash: e5a603bf5f396244d7cc3638de090d27
@@ -17,7 +17,7 @@ module:
       name: wNjsCppBasic
       org: noorg
       description: ___
-      enabled: 0
+      enabled: 1
       version: 0.4.0
       interpreters: &ref_3
         - njs >= 8.0.0
@@ -26,9 +26,9 @@ module:
       keywords: &ref_4
         - wTools
       license: MIT
-      author: Kostiantyn Wandalen <wanalen@willbe.so>
+      author: Kostiantyn Wandalen <wanalen@01.school>
       contributors: &ref_5
-        - Kostiantyn Wandalen <wanalen@willbe.so>
+        - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wbasenodejscpp
       npm.scripts: &ref_6
         test: wtest .run proto/**
@@ -898,12 +898,12 @@ module:
       name: wNjsCppBasic
       org: noorg
       description: ___
-      enabled: 0
+      enabled: 1
       version: 0.4.0
       interpreters: *ref_3
       keywords: *ref_4
       license: MIT
-      author: Kostiantyn Wandalen <wanalen@willbe.so>
+      author: Kostiantyn Wandalen <wanalen@01.school>
       contributors: *ref_5
       npm.name: wbasenodejscpp
       npm.scripts: *ref_6
@@ -1595,11 +1595,11 @@ module:
           - 'build::npm'
     consistency:
       ../.ex.will.yml:
-        hash: f7faa8821a4a03db565b6492c16a8744
+        hash: 47495d4485cc6feef19f4851f5b3a3a3
         size: 1968
       ../.im.will.yml:
         hash: e5a603bf5f396244d7cc3638de090d27
         size: 4860
       wNjsCppBasic.out.will.yml:
-        hash: 19a5349fdc64d4240cd5fbabae671719
+        hash: 969a884cd469e7633c4fe0ff5c2370e1
         size: 38783
