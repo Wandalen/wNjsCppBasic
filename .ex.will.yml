@@ -4,7 +4,7 @@ about :
   name : 'wNjsCppBasic'
   description : '___'
   version : '0.4.0'
-  enabled : 0
+  enabled : 1
   interpreters :
   - njs >= 8.0.0
   - chrome >= 60.0.0
@@ -12,9 +12,9 @@ about :
   keywords :
   - wTools
   license : MIT
-  author : 'Kostiantyn Wandalen <wanalen@willbe.so>'
+  author : 'Kostiantyn Wandalen <wanalen@01.school>'
   contributors :
-  - 'Kostiantyn Wandalen <wanalen@willbe.so>'
+  - 'Kostiantyn Wandalen <wanalen@01.school>'
   npm.name : 'wbasenodejscpp'
   npm.scripts :
     test : 'wtest .run proto/**'
