@@ -11,6 +11,18 @@ using SharedPtr = std::shared_ptr< Types_A ... >;
 
 //
 
+#if BOOST_VERSION
+
+template< typename... Types_A >
+using Tuple = boost::fusion::tuple< Types_A... >;
+
+#define tupleElementGet_M( tuple_A, Index_A ) ( boost::fusion::get< Index_A >( tuple_A ) )
+
+template< typename Element_A >
+using Range2d = Tuple< Element_A,Element_A >;
+
+#else
+
 template< typename ... Types_A >
 using _Tuple = std::tuple< Types_A ... >;
 
@@ -19,6 +31,11 @@ using Tuple = _Tuple< Types_A ... >;
 
 #define tupleElementGet_M( tuple_A, index_A ) ( std::get< index_A >( tuple_A ) )
 #define tupleElementTypeGet_M( Tuple_A, index_A ) std::tuple_element< index_A,Tuple_A >::type
+
+#endif
+
+
+
 
 #define assert_M assert
 //#define assert_M BOOST_ASSERT
