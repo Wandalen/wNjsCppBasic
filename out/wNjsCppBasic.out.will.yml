@@ -3,11 +3,11 @@ root:
   - wNjsCppBasic.out
 consistency:
   wNjsCppBasic.out.will.yml: &ref_0
-    hash: 969a884cd469e7633c4fe0ff5c2370e1
-    size: 38783
+    hash: a43f68b2cc7707086d135e6a9ecd6f17
+    size: 38879
   ../.ex.will.yml: &ref_1
-    hash: 47495d4485cc6feef19f4851f5b3a3a3
-    size: 1968
+    hash: 6a7c3c1570e30438a437b7c8912fcb94
+    size: 2004
   ../.im.will.yml: &ref_2
     hash: e5a603bf5f396244d7cc3638de090d27
     size: 4860
@@ -16,21 +16,21 @@ module:
     about:
       name: wNjsCppBasic
       org: noorg
-      description: ___
+      description: Collection of tools to write native NodeJs modules.
       enabled: 1
       version: 0.4.0
-      interpreters:
+      interpreters: &ref_3
         - njs >= 8.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
+      keywords: &ref_4
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_5
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wbasenodejscpp
-      npm.scripts:
+      npm.scripts: &ref_6
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -783,42 +783,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.cpp.export:
-        opts:
-          filePath: 'reflector::exported.cpp.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.cpp.export:
-        opts:
-          filePath: 'reflector::exported.files.cpp.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -933,23 +897,16 @@ module:
     about:
       name: wNjsCppBasic
       org: noorg
-      description: ___
+      description: Collection of tools to write native NodeJs modules.
       enabled: 1
       version: 0.4.0
-      interpreters:
-        - njs >= 8.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - wTools
+      interpreters: *ref_3
+      keywords: *ref_4
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
+      contributors: *ref_5
       npm.name: wbasenodejscpp
-      npm.scripts:
-        test: wtest .run proto/**
-        docgen: wdocgen .build proto
+      npm.scripts: *ref_6
     path:
       module.willfiles:
         criterion:
@@ -1638,9 +1595,11 @@ module:
           - 'build::npm'
     consistency:
       ../.ex.will.yml:
-        hash: 47495d4485cc6feef19f4851f5b3a3a3
-        size: 1968
+        hash: 6a7c3c1570e30438a437b7c8912fcb94
+        size: 2004
       ../.im.will.yml:
         hash: e5a603bf5f396244d7cc3638de090d27
         size: 4860
-      wNjsCppBasic.out.will.yml: *ref_0
+      wNjsCppBasic.out.will.yml:
+        hash: a43f68b2cc7707086d135e6a9ecd6f17
+        size: 38879
