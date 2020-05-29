@@ -1,7 +1,7 @@
 {
   "name" : "wbasenodejscpp",
   "version" : "0.3.8",
-  "description" : "___",
+  "description" : "Collection of tools to write native NodeJs modules.",
   "author" : "Kostiantyn Wandalen <wanalen@01.school>",
   "license" : "MIT",
   "enabled" : 1,
@@ -17,7 +17,7 @@
   {
     "url" : "https://github.com/Wandalen/wNjsCppBasic/issues"
   },
-  "dependencies" : { "wTools" : "" },
-  "devDependencies" : { "wTesting" : "" },
+  "dependencies" : {},
+  "devDependencies" : { "wTesting" : "alpha" },
   "keywords" : [ "wTools" ]
 }

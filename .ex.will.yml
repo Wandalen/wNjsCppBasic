@@ -2,7 +2,7 @@
 about :
 
   name : 'wNjsCppBasic'
-  description : '___'
+  description : 'Collection of tools to write native NodeJs modules.'
   version : '0.4.0'
   enabled : 1
   interpreters :
@@ -36,7 +36,7 @@ step :
     tar : 0
     criterion :
       content : 'proto'
-      
+
   cpp.export :
     inherit : module.export
     export : path::cpp
@@ -70,7 +70,7 @@ build :
     steps :
       # - build::debug.raw
       - step::proto.export
-      
+
   cpp.export :
     criterion :
       content : 'proto'
