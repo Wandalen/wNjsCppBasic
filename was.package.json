@@ -7,7 +7,7 @@
   "enabled" : 1,
   "main" : "proto/dwtools/amid/___",
   "files" : [ "proto/dwtools/amid", "proto/dwtools/Tools.s", "out" ],
-  "scripts" : { "test" : "wtest .run proto/**", "docgen" : "wdocgen proto" },
+  "scripts" : { "test" : "wtest .run 'proto/**'", "docgen" : "wdocgen proto" },
   "repository" :
   {
     "type" : "git",
