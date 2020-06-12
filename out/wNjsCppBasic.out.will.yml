@@ -3,11 +3,11 @@ root:
   - wNjsCppBasic.out
 consistency:
   wNjsCppBasic.out.will.yml: &ref_0
-    hash: a6424d48d5ecfc5342cb443cc9c77de4
-    size: 39462
+    hash: 9ce2017b4ab28f29f1c153470f104c84
+    size: 39231
   ../.ex.will.yml: &ref_1
-    hash: 1a5dcb32906d995fd80066c8670e0d12
-    size: 1968
+    hash: 6b03474d0b15c7fee63fdadc4aa2b6b3
+    size: 1969
   ../.im.will.yml: &ref_2
     hash: e5a603bf5f396244d7cc3638de090d27
     size: 4860
@@ -19,18 +19,18 @@ module:
       description: Collection of tools to write native NodeJs modules.
       enabled: 1
       version: 0.4.0
-      interpreters:
+      interpreters: &ref_3
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
+      keywords: &ref_4
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_5
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wbasenodejscpp
-      npm.scripts:
+      npm.scripts: &ref_6
         test: wtest .run proto/**
     path:
       module.willfiles:
@@ -231,9 +231,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
-        linking: hardLinkMaybe
         criterion:
           tests: no.tests
           debug: debug
@@ -248,9 +245,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
-        linking: hardLinkMaybe
         criterion:
           tests: no.tests
           debug: release
@@ -265,9 +259,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
-        linking: hardLinkMaybe
         criterion:
           tests: no.tests
           debug: debug
@@ -282,9 +273,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
-        linking: hardLinkMaybe
         criterion:
           tests: no.tests
           debug: release
@@ -299,9 +287,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
-        linking: hardLinkMaybe
         criterion:
           raw: raw
           debug: release
@@ -317,9 +302,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
-        linking: hardLinkMaybe
         criterion:
           tests: no.tests
           raw: compiled
@@ -336,9 +318,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
-        linking: hardLinkMaybe
         criterion:
           tests: no.tests
           raw: compiled
@@ -354,9 +333,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
-        linking: hardLinkMaybe
         criterion:
           tests: only.tests
           raw: compiled
@@ -372,9 +348,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
-        linking: hardLinkMaybe
         criterion:
           tests: only.tests
           raw: compiled
@@ -431,6 +404,45 @@ module:
           content: proto
           export: 1
     step:
+      predefined.common:
+        opts:
+          filePath: 'reflector::predefined.common'
+        criterion:
+          predefined: 1
+        inherit:
+          - files.reflect
+      predefined.debug.v1:
+        opts:
+          filePath: 'reflector::predefined.debug.v1'
+        criterion:
+          debug: 1
+          predefined: 1
+        inherit:
+          - files.reflect
+      predefined.debug.v2:
+        opts:
+          filePath: 'reflector::predefined.debug.v2'
+        criterion:
+          debug: debug
+          predefined: 1
+        inherit:
+          - files.reflect
+      predefined.release.v1:
+        opts:
+          filePath: 'reflector::predefined.release.v1'
+        criterion:
+          debug: 0
+          predefined: 1
+        inherit:
+          - files.reflect
+      predefined.release.v2:
+        opts:
+          filePath: 'reflector::predefined.release.v2'
+        criterion:
+          debug: release
+          predefined: 1
+        inherit:
+          - files.reflect
       proto.export:
         opts:
           export: 'path::export'
@@ -695,7 +707,7 @@ module:
           debug: release
       reflect.proto.debug.raw:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.debug.raw'
         criterion:
           tests: no.tests
           debug: debug
@@ -705,7 +717,7 @@ module:
           - files.reflect
       reflect.proto.release.raw:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.release.raw'
         criterion:
           tests: no.tests
           debug: release
@@ -715,7 +727,7 @@ module:
           - files.reflect
       reflect.proto.debug.compiled:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.debug.compiled'
         criterion:
           tests: no.tests
           debug: debug
@@ -725,7 +737,7 @@ module:
           - files.reflect
       reflect.proto.release.compiled:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.release.compiled'
         criterion:
           tests: no.tests
           debug: release
@@ -735,94 +747,51 @@ module:
           - files.reflect
       transpile.proto.raw:
         opts:
-          entry: 'path::entry.proto.no.tests'
-          filePath: 'reflector::transpile.proto.raw*'
+          filePath: 'reflector::transpile.proto.raw'
         criterion:
           raw: raw
           debug: release
           content: prime
         inherit:
-          - files.transpile
+          - files.reflect
       transpile.proto.no.tests.compiled.debug:
         opts:
-          entry: 'path::entry.proto.*=1'
-          filePath: 'reflector::transpile.proto.no.tests.compiled*'
+          filePath: 'reflector::transpile.proto.no.tests.compiled.debug'
         criterion:
           tests: no.tests
           raw: compiled
           debug: debug
           content: prime
         inherit:
-          - files.transpile
+          - files.reflect
       transpile.proto.no.tests.compiled.release:
         opts:
-          entry: 'path::entry.proto.*=1'
-          filePath: 'reflector::transpile.proto.no.tests.compiled*'
+          filePath: 'reflector::transpile.proto.no.tests.compiled.release'
         criterion:
           tests: no.tests
           raw: compiled
           debug: release
           content: prime
         inherit:
-          - files.transpile
+          - files.reflect
       transpile.proto.only.tests.compiled.debug:
         opts:
-          entry: 'path::entry.proto.*=1'
-          external.before: '{path::out.*=1}/Main.s'
-          filePath: 'reflector::transpile.proto.only.tests.compiled*'
+          filePath: 'reflector::transpile.proto.only.tests.compiled.debug'
         criterion:
           tests: only.tests
           raw: compiled
           debug: debug
           content: prime
         inherit:
-          - files.transpile
+          - files.reflect
       transpile.proto.only.tests.compiled.release:
         opts:
-          entry: 'path::entry.proto.*=1'
-          external.before: '{path::out.*=1}/Main.s'
-          filePath: 'reflector::transpile.proto.only.tests.compiled*'
+          filePath: 'reflector::transpile.proto.only.tests.compiled.release'
         criterion:
           tests: only.tests
           raw: compiled
           debug: release
           content: prime
-        inherit:
-          - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.cpp.export:
-        opts:
-          filePath: 'reflector::exported.cpp.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.cpp.export:
-        opts:
-          filePath: 'reflector::exported.files.cpp.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
         inherit:
           - files.reflect
     build:
@@ -942,19 +911,13 @@ module:
       description: Collection of tools to write native NodeJs modules.
       enabled: 1
       version: 0.4.0
-      interpreters:
-        - njs >= 10.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - wTools
+      interpreters: *ref_3
+      keywords: *ref_4
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
+      contributors: *ref_5
       npm.name: wbasenodejscpp
-      npm.scripts:
-        test: wtest .run proto/**
+      npm.scripts: *ref_6
     path:
       module.willfiles:
         criterion:
@@ -1184,6 +1147,45 @@ module:
         inherit:
           - predefined.*
     step:
+      predefined.common:
+        opts:
+          filePath: 'reflector::predefined.common'
+        criterion:
+          predefined: 1
+        inherit:
+          - files.reflect
+      predefined.debug.v1:
+        opts:
+          filePath: 'reflector::predefined.debug.v1'
+        criterion:
+          debug: 1
+          predefined: 1
+        inherit:
+          - files.reflect
+      predefined.debug.v2:
+        opts:
+          filePath: 'reflector::predefined.debug.v2'
+        criterion:
+          debug: debug
+          predefined: 1
+        inherit:
+          - files.reflect
+      predefined.release.v1:
+        opts:
+          filePath: 'reflector::predefined.release.v1'
+        criterion:
+          debug: 0
+          predefined: 1
+        inherit:
+          - files.reflect
+      predefined.release.v2:
+        opts:
+          filePath: 'reflector::predefined.release.v2'
+        criterion:
+          debug: release
+          predefined: 1
+        inherit:
+          - files.reflect
       proto.export:
         opts:
           export: 'path::export'
@@ -1448,7 +1450,7 @@ module:
           debug: release
       reflect.proto.debug.raw:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.debug.raw'
         criterion:
           tests: no.tests
           debug: debug
@@ -1458,7 +1460,7 @@ module:
           - files.reflect
       reflect.proto.release.raw:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.release.raw'
         criterion:
           tests: no.tests
           debug: release
@@ -1468,7 +1470,7 @@ module:
           - files.reflect
       reflect.proto.debug.compiled:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.debug.compiled'
         criterion:
           tests: no.tests
           debug: debug
@@ -1478,7 +1480,7 @@ module:
           - files.reflect
       reflect.proto.release.compiled:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.release.compiled'
         criterion:
           tests: no.tests
           debug: release
@@ -1488,60 +1490,53 @@ module:
           - files.reflect
       transpile.proto.raw:
         opts:
-          entry: 'path::entry.proto.no.tests'
-          filePath: 'reflector::transpile.proto.raw*'
+          filePath: 'reflector::transpile.proto.raw'
         criterion:
           raw: raw
           debug: release
           content: prime
         inherit:
-          - files.transpile
+          - files.reflect
       transpile.proto.no.tests.compiled.debug:
         opts:
-          entry: 'path::entry.proto.*=1'
-          filePath: 'reflector::transpile.proto.no.tests.compiled*'
+          filePath: 'reflector::transpile.proto.no.tests.compiled.debug'
         criterion:
           tests: no.tests
           raw: compiled
           debug: debug
           content: prime
         inherit:
-          - files.transpile
+          - files.reflect
       transpile.proto.no.tests.compiled.release:
         opts:
-          entry: 'path::entry.proto.*=1'
-          filePath: 'reflector::transpile.proto.no.tests.compiled*'
+          filePath: 'reflector::transpile.proto.no.tests.compiled.release'
         criterion:
           tests: no.tests
           raw: compiled
           debug: release
           content: prime
         inherit:
-          - files.transpile
+          - files.reflect
       transpile.proto.only.tests.compiled.debug:
         opts:
-          entry: 'path::entry.proto.*=1'
-          external.before: '{path::out.*=1}/Main.s'
-          filePath: 'reflector::transpile.proto.only.tests.compiled*'
+          filePath: 'reflector::transpile.proto.only.tests.compiled.debug'
         criterion:
           tests: only.tests
           raw: compiled
           debug: debug
           content: prime
         inherit:
-          - files.transpile
+          - files.reflect
       transpile.proto.only.tests.compiled.release:
         opts:
-          entry: 'path::entry.proto.*=1'
-          external.before: '{path::out.*=1}/Main.s'
-          filePath: 'reflector::transpile.proto.only.tests.compiled*'
+          filePath: 'reflector::transpile.proto.only.tests.compiled.release'
         criterion:
           tests: only.tests
           raw: compiled
           debug: release
           content: prime
         inherit:
-          - files.transpile
+          - files.reflect
     build:
       proto.export:
         steps:
@@ -1625,9 +1620,11 @@ module:
           - 'build::npm'
     consistency:
       ../.ex.will.yml:
-        hash: 1a5dcb32906d995fd80066c8670e0d12
-        size: 1968
+        hash: 6b03474d0b15c7fee63fdadc4aa2b6b3
+        size: 1969
       ../.im.will.yml:
         hash: e5a603bf5f396244d7cc3638de090d27
         size: 4860
-      wNjsCppBasic.out.will.yml: *ref_0
+      wNjsCppBasic.out.will.yml:
+        hash: 9ce2017b4ab28f29f1c153470f104c84
+        size: 39231
