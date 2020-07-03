@@ -19,18 +19,18 @@ module:
       description: Collection of tools to write native NodeJs modules.
       enabled: 1
       version: 0.4.0
-      interpreters: &ref_3
+      interpreters:
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_4
+      keywords:
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: &ref_5
+      contributors:
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wbasenodejscpp
-      npm.scripts: &ref_6
+      npm.scripts:
         test: wtest .run proto/**
     path:
       module.willfiles:
@@ -794,6 +794,42 @@ module:
           content: prime
         inherit:
           - files.reflect
+      exported.proto.export:
+        opts:
+          filePath: 'reflector::exported.proto.export'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.files.proto.export:
+        opts:
+          filePath: 'reflector::exported.files.proto.export'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.cpp.export:
+        opts:
+          filePath: 'reflector::exported.cpp.export'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.files.cpp.export:
+        opts:
+          filePath: 'reflector::exported.files.cpp.export'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
     build:
       proto.export:
         steps:
@@ -911,13 +947,19 @@ module:
       description: Collection of tools to write native NodeJs modules.
       enabled: 1
       version: 0.4.0
-      interpreters: *ref_3
-      keywords: *ref_4
+      interpreters:
+        - njs >= 10.0.0
+        - chrome >= 60.0.0
+        - firefox >= 60.0.0
+      keywords:
+        - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: *ref_5
+      contributors:
+        - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wbasenodejscpp
-      npm.scripts: *ref_6
+      npm.scripts:
+        test: wtest .run proto/**
     path:
       module.willfiles:
         criterion:
@@ -1147,45 +1189,6 @@ module:
         inherit:
           - predefined.*
     step:
-      predefined.common:
-        opts:
-          filePath: 'reflector::predefined.common'
-        criterion:
-          predefined: 1
-        inherit:
-          - files.reflect
-      predefined.debug.v1:
-        opts:
-          filePath: 'reflector::predefined.debug.v1'
-        criterion:
-          debug: 1
-          predefined: 1
-        inherit:
-          - files.reflect
-      predefined.debug.v2:
-        opts:
-          filePath: 'reflector::predefined.debug.v2'
-        criterion:
-          debug: debug
-          predefined: 1
-        inherit:
-          - files.reflect
-      predefined.release.v1:
-        opts:
-          filePath: 'reflector::predefined.release.v1'
-        criterion:
-          debug: 0
-          predefined: 1
-        inherit:
-          - files.reflect
-      predefined.release.v2:
-        opts:
-          filePath: 'reflector::predefined.release.v2'
-        criterion:
-          debug: release
-          predefined: 1
-        inherit:
-          - files.reflect
       proto.export:
         opts:
           export: 'path::export'
@@ -1490,15 +1493,17 @@ module:
           - files.reflect
       transpile.proto.raw:
         opts:
+          entry: 'path::entry.proto.no.tests'
           filePath: 'reflector::transpile.proto.raw'
         criterion:
           raw: raw
           debug: release
           content: prime
         inherit:
-          - files.reflect
+          - files.transpile
       transpile.proto.no.tests.compiled.debug:
         opts:
+          entry: 'path::entry.proto.*=1'
           filePath: 'reflector::transpile.proto.no.tests.compiled.debug'
         criterion:
           tests: no.tests
@@ -1506,9 +1511,10 @@ module:
           debug: debug
           content: prime
         inherit:
-          - files.reflect
+          - files.transpile
       transpile.proto.no.tests.compiled.release:
         opts:
+          entry: 'path::entry.proto.*=1'
           filePath: 'reflector::transpile.proto.no.tests.compiled.release'
         criterion:
           tests: no.tests
@@ -1516,9 +1522,11 @@ module:
           debug: release
           content: prime
         inherit:
-          - files.reflect
+          - files.transpile
       transpile.proto.only.tests.compiled.debug:
         opts:
+          entry: 'path::entry.proto.*=1'
+          external.before: '{path::out.*=1}/Main.s'
           filePath: 'reflector::transpile.proto.only.tests.compiled.debug'
         criterion:
           tests: only.tests
@@ -1526,9 +1534,11 @@ module:
           debug: debug
           content: prime
         inherit:
-          - files.reflect
+          - files.transpile
       transpile.proto.only.tests.compiled.release:
         opts:
+          entry: 'path::entry.proto.*=1'
+          external.before: '{path::out.*=1}/Main.s'
           filePath: 'reflector::transpile.proto.only.tests.compiled.release'
         criterion:
           tests: only.tests
@@ -1536,7 +1546,7 @@ module:
           debug: release
           content: prime
         inherit:
-          - files.reflect
+          - files.transpile
     build:
       proto.export:
         steps:
@@ -1625,6 +1635,4 @@ module:
       ../.im.will.yml:
         hash: e5a603bf5f396244d7cc3638de090d27
         size: 4860
-      wNjsCppBasic.out.will.yml:
-        hash: 9ce2017b4ab28f29f1c153470f104c84
-        size: 39231
+      wNjsCppBasic.out.will.yml: *ref_0
