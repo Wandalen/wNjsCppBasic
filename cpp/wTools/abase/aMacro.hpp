@@ -20,7 +20,7 @@
     return originalName( ::std::forward< Args >( args ) ... ); \
   } \
 
-  //
+//
 
 #define varMaybeNull_M( varName_A,assign_A ) \
   auto BOOST_PP_CAT( varName_A, Ptr ) = assign_A; \
