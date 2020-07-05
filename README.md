@@ -1,4 +1,4 @@
 
-# wNjsCppBasic [![Build Status](https://travis-ci.org/Wandalen/wNjsCppBasic.svg?branch=master)](https://travis-ci.org/Wandalen/wNjsCppBasic)
+# module::NjsCppBasic [![Status](https://github.com/Wandalen/wNjsCppBasic/workflows/Test/badge.svg)](https://github.com/Wandalen/wNjsCppBasic}/actions?query=workflow%3ATest)
 
 Collection of tools to write native NodeJs modules.
