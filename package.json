@@ -5,8 +5,8 @@
   "author" : "Kostiantyn Wandalen <wanalen@01.school>",
   "license" : "MIT",
   "enabled" : 1,
-  "main" : "proto/dwtools/amid/___",
-  "files" : [ "proto/dwtools/amid", "proto/dwtools/Tools.s", "out" ],
+  "main" : "proto/wtools/amid/___",
+  "files" : [ "proto/wtools/amid", "proto/wtools/Tools.s", "out" ],
   "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
   "repository" :
   {
