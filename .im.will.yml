@@ -4,6 +4,9 @@ submodule :
   wTools :
     path : npm:///wTools
     enabled : 0 # submodule
+  wresolverextra :
+    path : npm:///wresolverextra
+    enabled : 0 # submodule
   wbasenodejscpp :
     path : hd://.
     enabled : 0 # submodule
