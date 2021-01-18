@@ -17,7 +17,7 @@
   {
     "url" : "https://github.com/Wandalen/wNjsCppBasic/issues"
   },
-  "dependencies" : {},
-  "devDependencies" : { "wTesting" : "alpha" },
+  "dependencies" : { "wresolverextra" : "alpha" },
+  "devDependencies" : { "wTesting" : "alpha", "eslint" : "7.1.0" },
   "keywords" : [ "wTools" ]
 }
