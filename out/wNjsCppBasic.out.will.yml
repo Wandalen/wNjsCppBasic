@@ -19,18 +19,18 @@ module:
       description: Collection of tools to write native NodeJs modules.
       enabled: 1
       version: 0.4.0
-      interpreters: &ref_3
+      interpreters:
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_4
+      keywords:
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: &ref_5
+      contributors:
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wbasenodejscpp
-      npm.scripts: &ref_6
+      npm.scripts:
         test: wtest .run proto/**
     path:
       module.willfiles:
@@ -769,6 +769,42 @@ module:
           content: prime
         inherit:
           - files.transpile
+      exported.proto.export:
+        opts:
+          filePath: reflector::exported.proto.export
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.files.proto.export:
+        opts:
+          filePath: reflector::exported.files.proto.export
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.cpp.export:
+        opts:
+          filePath: reflector::exported.cpp.export
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.files.cpp.export:
+        opts:
+          filePath: reflector::exported.files.cpp.export
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
     build:
       proto.export:
         steps:
@@ -886,13 +922,19 @@ module:
       description: Collection of tools to write native NodeJs modules.
       enabled: 1
       version: 0.4.0
-      interpreters: *ref_3
-      keywords: *ref_4
+      interpreters:
+        - njs >= 10.0.0
+        - chrome >= 60.0.0
+        - firefox >= 60.0.0
+      keywords:
+        - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: *ref_5
+      contributors:
+        - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wbasenodejscpp
-      npm.scripts: *ref_6
+      npm.scripts:
+        test: wtest .run proto/**
     path:
       module.willfiles:
         criterion:
@@ -1574,6 +1616,4 @@ module:
       ../.im.will.yml:
         hash: 5336ef73dea86133df614ca688ea3fa2
         size: 4965
-      wNjsCppBasic.out.will.yml:
-        hash: 84f2f83721aeffe850c755b804dd4166
-        size: 37964
+      wNjsCppBasic.out.will.yml: *ref_0
