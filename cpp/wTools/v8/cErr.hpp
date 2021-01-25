@@ -13,7 +13,8 @@ namespace v8 { //
 template< typename ... Srcs_A >
 void errThrow( const Srcs_A ... srcs )
 {
-  v8::Isolate::GetCurrent()->ThrowException( vstr( srcs ... ) );
+  // v8::Isolate::GetCurrent()->ThrowException( vstr( srcs ... ) );
+  v8::Isolate::GetCurrent()->ThrowException( v8::Exception::Error( vstr( srcs ... ) ) );
 }
 
 } // namespace v8 //
