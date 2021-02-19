@@ -5,10 +5,12 @@
   "author": "Kostiantyn Wandalen <wanalen@01.school>",
   "license": "MIT",
   "enabled": 1,
-  "main": "proto/wtools/amid/___",
+  "main": "js/Main.ss",
   "files": [
+    "js",
     "proto/wtools/amid",
     "proto/wtools/Tools.s",
+    "cpp",
     "out"
   ],
   "scripts": {
