@@ -9,6 +9,7 @@ namespace wTools //
 }
 
 #include "./abase/aMacro.hpp"
+#include "./abase/aTime.hpp"
 #include "./abase/aType.hpp"
 #include "./abase/bStr.hpp"
 #include "./abase/cErr.hpp"
