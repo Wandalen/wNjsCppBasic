@@ -5,7 +5,7 @@
 #include <numeric>
 
 
-#include "./TypedBuffer.hpp"
+#include "../../wTools/container/TypedBuffer.hpp"
 
 BOOST_AUTO_TEST_SUITE(  TypedBufferStd );
 BOOST_AUTO_TEST_CASE( case1 )
