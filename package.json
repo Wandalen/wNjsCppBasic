@@ -10,13 +10,7 @@
     "js",
     "proto/wtools/amid",
     "proto/wtools/Tools.s",
-    "cpp/wTools",
-    "cpp/Body.begin.cpp",
-    "cpp/Body.end.cpp",
-    "cpp/IncludeNode.hpp",
-    "cpp/Tools.hpp",
-    "cpp/Types.hpp",
-    "cpp/wTools.hpp",
+    "cpp",
     "out"
   ],
   "scripts": {
