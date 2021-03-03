@@ -177,7 +177,6 @@ module:
           - ../cpp/wTools/aBase.hpp
           - ../cpp/wTools/ArraySorted.hpp
           - ../cpp/wTools/OptionalTuple.hpp
-          - ../cpp/wTools/OptionalTuple.test.hpp
           - ../cpp/wTools/V8.hpp
           - ../cpp/wTools/zAll.hpp
           - ../cpp/wTools/abase
@@ -192,7 +191,6 @@ module:
           - ../cpp/wTools/container/TypedBuffer.hpp
           - ../cpp/wTools/container/TypedBuffer.std.body.hpp
           - ../cpp/wTools/container/TypedBuffer.std.hpp
-          - ../cpp/wTools/container/TypedBuffer.test.cpp
           - ../cpp/wTools/container/TypedBufferConstructor.body.hpp
           - ../cpp/wTools/meta
           - ../cpp/wTools/meta/Body.begin.cpp
@@ -208,6 +206,10 @@ module:
           - ../cpp/wTools/v8/fToV8.hpp
           - ../cpp/wTools/v8/jArgumentsOf.hpp
           - ../cpp/wTools/v8/jFieldsOf.hpp
+          - ../cpp/wTools.test
+          - ../cpp/wTools.test/OptionalTuple.test.hpp
+          - ../cpp/wTools.test/container
+          - ../cpp/wTools.test/container/TypedBuffer.test.cpp
     submodule:
       wTools:
         path: 'npm:///wTools'
