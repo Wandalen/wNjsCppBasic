@@ -1,12 +1,13 @@
 {
-  "name": "wbasenodejscpp",
-  "version": "0.3.74",
-  "description": "Collection of tools to write native NodeJs modules.",
-  "author": "Kostiantyn Wandalen <wanalen@01.school>",
-  "license": "MIT",
-  "enabled": 1,
-  "main": "js/Main.ss",
-  "files": [
+  "name" : "wbasenodejscpp",
+  "version" : "0.3.74",
+  "description" : "Collection of tools to write native NodeJs modules.",
+  "author" : "Kostiantyn Wandalen <wanalen@01.school>",
+  "license" : "MIT",
+  "enabled" : 1,
+  "main" : "js/Main.ss",
+  "files" :
+  [
     "js",
     "proto/wtools/amid",
     "proto/wtools/Tools.s",
@@ -17,25 +18,20 @@
     "cpp/Tools.hpp",
     "cpp/Types.hpp",
     "cpp/wTools.hpp",
-    "out"
+    "out",
+    "proto/node_modules"
   ],
-  "scripts": {
-    "test": "wtest .run 'proto/**' rapidity:-3",
-    "docgen": "wdocgen proto"
+  "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/Wandalen/wNjsCppBasic.git"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Wandalen/wNjsCppBasic.git"
+  "bugs" :
+  {
+    "url" : "https://github.com/Wandalen/wNjsCppBasic/issues"
   },
-  "bugs": {
-    "url": "https://github.com/Wandalen/wNjsCppBasic/issues"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "eslint": "7.1.0",
-    "wTesting": "alpha"
-  },
-  "keywords": [
-    "wTools"
-  ]
+  "dependencies" : {},
+  "devDependencies" : { "eslint" : "7.1.0", "wTesting" : "alpha" },
+  "keywords" : [ "wTools" ]
 }
