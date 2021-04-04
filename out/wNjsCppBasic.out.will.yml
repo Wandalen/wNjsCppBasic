@@ -3,14 +3,14 @@ root:
   - wNjsCppBasic.out
 consistency:
   wNjsCppBasic.out.will.yml: &ref_0
-    hash: 84f2f83721aeffe850c755b804dd4166
-    size: 37964
+    hash: 89fb7f06198a72790efb8251fc37b505
+    size: 38542
   ../.ex.will.yml: &ref_1
     hash: 6b03474d0b15c7fee63fdadc4aa2b6b3
     size: 1969
   ../.im.will.yml: &ref_2
-    hash: 5336ef73dea86133df614ca688ea3fa2
-    size: 4965
+    hash: f3251233f7b886d7b2b60252a788ec32
+    size: 4932
 module:
   wNjsCppBasic.out:
     about:
@@ -19,18 +19,18 @@ module:
       description: Collection of tools to write native NodeJs modules.
       enabled: 1
       version: 0.4.0
-      interpreters:
+      interpreters: &ref_3
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
+      keywords: &ref_4
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_5
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wbasenodejscpp
-      npm.scripts:
+      npm.scripts: &ref_6
         test: wtest .run proto/**
     path:
       module.willfiles:
@@ -60,7 +60,7 @@ module:
       download:
         criterion:
           predefined: 1
-        path: ../
+        path: ..
       repository:
         path: 'git+https:///github.com/Wandalen/wNjsCppBasic.git'
       origins:
@@ -139,6 +139,10 @@ module:
           raw: compiled
           content: prime
         path: '{path::out.*=}/source/Index.s'
+      npm.proto.entry:
+        path:
+          - ../js/Main.ss
+          - ../proto/node_modules/wbasenodejscpp
       exported.dir.proto.export:
         criterion:
           generated: 1
@@ -775,42 +779,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.cpp.export:
-        opts:
-          filePath: 'reflector::exported.cpp.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.cpp.export:
-        opts:
-          filePath: 'reflector::exported.files.cpp.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -928,19 +896,13 @@ module:
       description: Collection of tools to write native NodeJs modules.
       enabled: 1
       version: 0.4.0
-      interpreters:
-        - njs >= 10.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - wTools
+      interpreters: *ref_3
+      keywords: *ref_4
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
+      contributors: *ref_5
       npm.name: wbasenodejscpp
-      npm.scripts:
-        test: wtest .run proto/**
+      npm.scripts: *ref_6
     path:
       module.willfiles:
         criterion:
@@ -969,7 +931,7 @@ module:
       download:
         criterion:
           predefined: 1
-        path: ./
+        path: .
       repository:
         path: 'git+https:///github.com/Wandalen/wNjsCppBasic.git'
       origins:
@@ -1048,6 +1010,10 @@ module:
           raw: compiled
           content: prime
         path: '{path::out.*=}/source/Index.s'
+      npm.proto.entry:
+        path:
+          - js/Main.ss
+          - proto/node_modules/wbasenodejscpp
     submodule:
       wTools:
         path: 'npm:///wTools'
@@ -1621,6 +1587,8 @@ module:
         hash: 6b03474d0b15c7fee63fdadc4aa2b6b3
         size: 1969
       ../.im.will.yml:
-        hash: 5336ef73dea86133df614ca688ea3fa2
-        size: 4965
-      wNjsCppBasic.out.will.yml: *ref_0
+        hash: f3251233f7b886d7b2b60252a788ec32
+        size: 4932
+      wNjsCppBasic.out.will.yml:
+        hash: 89fb7f06198a72790efb8251fc37b505
+        size: 38542
