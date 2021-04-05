@@ -74,8 +74,8 @@ path:
       raw: compiled
       content: prime
   npm.proto.entry:
-    - /pro/module/wNjsCppBasic/js/Main.ss
-    - /pro/module/wNjsCppBasic/proto/node_modules/wbasenodejscpp
+    - js/Main.ss
+    - proto/node_modules/wbasenodejscpp
 reflector:
   reflect.proto:
     inherit: predefined.*
