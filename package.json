@@ -10,7 +10,6 @@
   [
     "js",
     "proto/wtools/amid",
-    "proto/wtools/Tools.s",
     "cpp/wTools",
     "cpp/Body.begin.cpp",
     "cpp/Body.end.cpp",
