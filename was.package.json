@@ -30,7 +30,7 @@
   {
     "url" : "https://github.com/Wandalen/wNjsCppBasic/issues"
   },
-  "dependencies" : { "wTools" : "" },
+  "dependencies" : {},
   "devDependencies" : { "eslint" : "7.1.0", "wTesting" : "alpha" },
   "keywords" : [ "wTools" ]
 }
