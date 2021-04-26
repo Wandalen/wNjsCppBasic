@@ -17,7 +17,7 @@ public : // type
 
   static const PropertyAttribute Regular = PropertyAttribute::None;
 
-public : // routines
+public : // implementation
 
   inline _FieldsOf( Local< TypeTarget_A > target ){ this->target = target; };
 
