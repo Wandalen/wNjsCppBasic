@@ -3,14 +3,11 @@ root:
   - wNjsCppBasic.out
 consistency:
   wNjsCppBasic.out.will.yml: &ref_0
-    hash: 3c7cf296965a54772fe4543e8bb12dde
-    size: 38578
-  ../.ex.will.yml: &ref_1
-    hash: 5f74f6f203731154e57b7ab1728861a9
-    size: 1983
-  ../.im.will.yml: &ref_2
-    hash: 30c79e1ecc738cddfa1d48da2ebab69b
-    size: 4882
+    hash: 76d6458e3d061fe2f60b8f0b12b6f08c
+    size: 38193
+  ../will.yml: &ref_1
+    hash: 831bb3c3ca2f2265db15e5ceb9ee3037
+    size: 6581
 module:
   wNjsCppBasic.out:
     about:
@@ -20,18 +17,18 @@ module:
       enabled: 1
       version: 0.4.0
       native: 1
-      interpreters: &ref_3
+      license: MIT
+      npm.name: wbasenodejscpp
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: &ref_2
+        - wTools
+      contributors: &ref_3
+        - Kostiantyn Wandalen <wanalen@01.school>
+      interpreters: &ref_4
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_4
-        - wTools
-      license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: &ref_5
-        - Kostiantyn Wandalen <wanalen@01.school>
-      npm.name: wbasenodejscpp
-      npm.scripts: &ref_6
+      npm.scripts: &ref_5
         test: wtest .run proto/**
     path:
       module.willfiles:
@@ -45,15 +42,11 @@ module:
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.in:
         criterion:
           predefined: 1
@@ -888,8 +881,7 @@ module:
           export: 1
     consistency:
       wNjsCppBasic.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../will.yml: *ref_1
   ../:
     about:
       name: wNjsCppBasic
@@ -898,26 +890,22 @@ module:
       enabled: 1
       version: 0.4.0
       native: 1
-      interpreters: *ref_3
-      keywords: *ref_4
       license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: *ref_5
       npm.name: wbasenodejscpp
-      npm.scripts: *ref_6
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: *ref_2
+      contributors: *ref_3
+      interpreters: *ref_4
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
@@ -1585,12 +1573,9 @@ module:
           - 'build::release'
           - 'build::npm'
     consistency:
-      ../.ex.will.yml:
-        hash: 5f74f6f203731154e57b7ab1728861a9
-        size: 1983
-      ../.im.will.yml:
-        hash: 30c79e1ecc738cddfa1d48da2ebab69b
-        size: 4882
+      ../will.yml:
+        hash: 831bb3c3ca2f2265db15e5ceb9ee3037
+        size: 6581
       wNjsCppBasic.out.will.yml:
-        hash: 3c7cf296965a54772fe4543e8bb12dde
-        size: 38578
+        hash: 76d6458e3d061fe2f60b8f0b12b6f08c
+        size: 38193
