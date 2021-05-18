@@ -3,8 +3,8 @@ root:
   - wNjsCppBasic.out
 consistency:
   wNjsCppBasic.out.will.yml: &ref_0
-    hash: 76d6458e3d061fe2f60b8f0b12b6f08c
-    size: 38193
+    hash: 53f8b6c40d2023a4e3b792932bd58576
+    size: 38199
   ../will.yml: &ref_1
     hash: 831bb3c3ca2f2265db15e5ceb9ee3037
     size: 6581
@@ -373,7 +373,7 @@ module:
           prefixPath: ../proto
         mandatory: 1
         dstRewritingOnlyPreserving: 1
-        linking: hardLinkMaybe
+        linkingAction: hardLinkMaybe
         criterion:
           generated: 1
           content: proto
@@ -397,7 +397,7 @@ module:
           prefixPath: ../cpp
         mandatory: 1
         dstRewritingOnlyPreserving: 1
-        linking: hardLinkMaybe
+        linkingAction: hardLinkMaybe
         criterion:
           generated: 1
           content: proto
@@ -1577,5 +1577,5 @@ module:
         hash: 831bb3c3ca2f2265db15e5ceb9ee3037
         size: 6581
       wNjsCppBasic.out.will.yml:
-        hash: 76d6458e3d061fe2f60b8f0b12b6f08c
-        size: 38193
+        hash: 53f8b6c40d2023a4e3b792932bd58576
+        size: 38199
