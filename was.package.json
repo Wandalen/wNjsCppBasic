@@ -18,7 +18,9 @@
     "cpp/Types.hpp",
     "cpp/wTools.hpp",
     "out",
-    "proto/node_modules"
+    "proto/node_modules",
+    "proto/node_modules/Tools",
+    "proto/node_modules/wbasenodejscpp"
   ],
   "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
   "repository" :
