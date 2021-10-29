@@ -3,11 +3,11 @@ root:
   - wNjsCppBasic.out
 consistency:
   wNjsCppBasic.out.will.yml: &ref_0
-    hash: 53f8b6c40d2023a4e3b792932bd58576
-    size: 38199
+    hash: fd095f716da527bf6a7b83f2c2d3de79
+    size: 37821
   ../will.yml: &ref_1
-    hash: 831bb3c3ca2f2265db15e5ceb9ee3037
-    size: 6581
+    hash: a574c87b6ebecb327bacd8cb3201735c
+    size: 6440
 module:
   wNjsCppBasic.out:
     about:
@@ -447,9 +447,6 @@ module:
           content: npm
         inherit:
           - module.export
-      npm.publish:
-        opts:
-          shell: npm publish
       npm.generate.debug.raw:
         opts:
           entryPath: 'path::entry.out.*=1'
@@ -791,12 +788,6 @@ module:
           - 'step::doc.export'
         criterion:
           content: doc
-          export: 1
-      npm.export:
-        steps:
-          - 'step::npm.publish'
-        criterion:
-          content: npm
           export: 1
       export:
         steps:
@@ -1165,9 +1156,6 @@ module:
           content: npm
         inherit:
           - module.export
-      npm.publish:
-        opts:
-          shell: npm publish
       npm.generate.debug.raw:
         opts:
           entryPath: 'path::entry.out.*=1'
@@ -1510,12 +1498,6 @@ module:
         criterion:
           content: doc
           export: 1
-      npm.export:
-        steps:
-          - 'step::npm.publish'
-        criterion:
-          content: npm
-          export: 1
       export:
         steps:
           - 'build::proto.export'
@@ -1574,8 +1556,8 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: 831bb3c3ca2f2265db15e5ceb9ee3037
-        size: 6581
+        hash: a574c87b6ebecb327bacd8cb3201735c
+        size: 6440
       wNjsCppBasic.out.will.yml:
-        hash: 53f8b6c40d2023a4e3b792932bd58576
-        size: 38199
+        hash: fd095f716da527bf6a7b83f2c2d3de79
+        size: 37821
