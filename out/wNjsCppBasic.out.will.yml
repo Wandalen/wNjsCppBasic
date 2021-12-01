@@ -3,11 +3,11 @@ root:
   - wNjsCppBasic.out
 consistency:
   wNjsCppBasic.out.will.yml: &ref_0
-    hash: fd095f716da527bf6a7b83f2c2d3de79
-    size: 37821
+    hash: ec7ab86ff2297c06bea2a72d2a355c4d
+    size: 37833
   ../will.yml: &ref_1
-    hash: a574c87b6ebecb327bacd8cb3201735c
-    size: 6440
+    hash: 5f2d781102efc56c4ab68dd2a92c432e
+    size: 6448
 module:
   wNjsCppBasic.out:
     about:
@@ -1556,8 +1556,8 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: a574c87b6ebecb327bacd8cb3201735c
-        size: 6440
+        hash: 5f2d781102efc56c4ab68dd2a92c432e
+        size: 6448
       wNjsCppBasic.out.will.yml:
-        hash: fd095f716da527bf6a7b83f2c2d3de79
-        size: 37821
+        hash: ec7ab86ff2297c06bea2a72d2a355c4d
+        size: 37833
