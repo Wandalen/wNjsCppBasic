@@ -1,6 +1,6 @@
 {
   "name": "wbasenodejscpp",
-  "version": "0.3.133",
+  "version": "0.3.134",
   "description": "Collection of tools to write native NodeJs modules.",
   "author": "Kostiantyn Wandalen <wandalen@obox.systems>",
   "license": "MIT",
